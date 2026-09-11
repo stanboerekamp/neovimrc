@@ -12,3 +12,4 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "J", "mzJ`z")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("n", "<leader>l", ":Lazy<CR>")
