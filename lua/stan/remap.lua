@@ -13,3 +13,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>")
+
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<cr>", { desc = "Markdown: Start preview" })
+
