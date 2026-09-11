@@ -1,4 +1,8 @@
 -- Bootstrap lazy.nvim
+-- Small command-line tools used by Neovim plugins live beside nvim-data.
+local toolpath = vim.fn.stdpath("data") .. "/bin"
+vim.env.PATH = toolpath .. ";" .. vim.env.PATH
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -24,6 +28,9 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = "stan.plugins",
+  -- None of the current plugins use LuaRocks. Disabling this keeps Lazy from
+  -- checking for its optional private hererocks installation.
+  rocks = { enabled = false },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
